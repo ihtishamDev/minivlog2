@@ -1,4 +1,6 @@
 import datetime
+import os 
+# ye os main ny is lie install kia tha
 from flask import Flask, render_template , request
 from pymongo import MongoClient
 from dotenv import load_dotenv
@@ -32,7 +34,7 @@ def create_app():
         for entry in app.db.entries.find({})
         ]
 
-        return render_template("home.html", entries=entries_with_date)
+        return render_template("main.html", entries=entries_with_date)
 
     if __name__ == "__main__":""
     app.run(debug=True) 
